@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.petarmc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:24.0.1'
+}
+
+application {
+    mainClass = 'com.petarmc.tictactoe.TicTacToe'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.petarmc.TicTacToe.TicTacToe'
+        )
+    }
+}
