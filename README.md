@@ -1,7 +1,7 @@
 # Tic Tac Toe
 
 [![GitHub Release](https://img.shields.io/github/v/release/PetarMc1/TicTacToe?logo=GitHub)](https://github.com/PetarMc1/TicTacToe/releases)
-![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/PetarMc1/TicTacToe/latest/total?logo=GitHub)
+![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/PetarMc1/TicTacToe/TicTacToe-1.0.0.jar?logo=GitHub)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/PetarMc1/TicTacToe?logo=Github)](https://github.com/PetarMc1/TicTacToe/pulls)
 [![GitHub Issues](https://img.shields.io/github/issues/PetarMc1/TicTacToe?logo=Github)](https://github.com/PetarMc1/TicTacToe/issues)
 [![GitHub License](https://img.shields.io/github/license/PetarMc1/TicTacToe)](https://github.com/PetarMc1/TicTacToe/blob/master/LICENSE)
