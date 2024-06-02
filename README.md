@@ -44,7 +44,7 @@ Alternatively, you can download the JAR file from the [latest release](https://g
 Once downloaded, you can run the JAR file directly by executing the following command:
 
 ```bash
-java -jar TicTacToe-1.1.0.jar
+java -jar TicTacToe-1.1.1.jar
 ```
 
 or by double-clicking the file.

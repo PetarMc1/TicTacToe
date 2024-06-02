@@ -14,7 +14,8 @@ public class TicTacToe extends JFrame {
     private JButton[] buttons = new JButton[9];
     private JLabel infoLabel = new JLabel("Circle goes first");
     private boolean gameEnded = false;
-    private double fontSizeScalingFactor = 0.06; // Adjust this value to change the scaling factor
+    private double fontSizeScalingFactor = 0.06;
+    private int initialFontSize = 42;
 
     public TicTacToe() {
         setTitle("Tic Tac Toe");
@@ -23,8 +24,7 @@ public class TicTacToe extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Load the custom font
-        Font customFont = loadFont("PermanentMarker-Regular.ttf", 30f);
+        Font customFont = loadFont("PermanentMarker-Regular.ttf", initialFontSize);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(Color.DARK_GRAY);
@@ -32,7 +32,7 @@ public class TicTacToe extends JFrame {
 
         JPanel innerPanel = new JPanel(new BorderLayout());
         innerPanel.setBackground(Color.DARK_GRAY);
-        innerPanel.setBorder(new EmptyBorder(30, 30, 30, 30)); // Add initial margin
+        innerPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
         mainPanel.add(innerPanel, BorderLayout.CENTER);
 
         JPanel gameBoard = new JPanel(new GridLayout(3, 3));
@@ -51,13 +51,14 @@ public class TicTacToe extends JFrame {
             buttons[i].setBackground(Color.GRAY);
             buttons[i].setForeground(Color.WHITE);
             buttons[i].setFocusPainted(false);
+            buttons[i].setFont(customFont.deriveFont((float) (initialFontSize * 1.2)));
             buttons[i].addActionListener(new ButtonClickListener(i));
             gameBoard.add(buttons[i]);
         }
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.setBackground(Color.DARK_GRAY);
-        buttonPanel.setBorder(new EmptyBorder(5, 0, 0, 0)); // Add 5px margin at the top
+        buttonPanel.setBorder(new EmptyBorder(5, 0, 0, 0));
         innerPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         JButton resetButton = new JButton("New Game");
@@ -84,12 +85,11 @@ public class TicTacToe extends JFrame {
         resetButton.addActionListener(e -> resetGame());
         buttonPanel.add(resetButton);
 
-        // Adjust font size when window is resized
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 Font scaledFont = customFont.deriveFont((float) (getWidth() * fontSizeScalingFactor));
                 for (JButton button : buttons) {
-                    button.setFont(scaledFont);
+                    button.setFont(scaledFont.deriveFont((float) (initialFontSize * 1.2)));
                 }
                 resetButton.setFont(scaledFont.deriveFont(16f));
             }
@@ -174,5 +174,6 @@ public class TicTacToe extends JFrame {
             TicTacToe frame = new TicTacToe();
             frame.setVisible(true);
         });
-    }
+    };
 }
+
