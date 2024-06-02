@@ -64,7 +64,7 @@ public class TicTacToe extends JFrame {
             buttons[index].setText(String.valueOf(currentPlayer));
             buttons[index].setForeground(currentPlayer == 'O' ? Color.BLUE : Color.RED);
             if (checkForWin()) {
-                infoLabel.setText(currentPlayer + " wins!");
+                infoLabel.setText((currentPlayer == 'O' ? "Circle" : "Cross") + " wins!");
                 gameEnded = true;
             } else if (isBoardFull()) {
                 infoLabel.setText("It's a draw!");
