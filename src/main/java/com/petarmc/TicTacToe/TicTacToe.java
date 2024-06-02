@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.InputStream;
 
 public class TicTacToe extends JFrame {
     private char currentPlayer = 'O';
@@ -18,6 +19,9 @@ public class TicTacToe extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
+        // Load the custom font
+        Font customFont = loadFont("PermanentMarker-Regular.ttf", 30f);
+
         JPanel gameBoard = new JPanel(new GridLayout(3, 3));
         gameBoard.setBackground(Color.DARK_GRAY);
         add(gameBoard, BorderLayout.CENTER);
@@ -26,12 +30,12 @@ public class TicTacToe extends JFrame {
         infoLabel.setBackground(Color.DARK_GRAY);
         infoLabel.setOpaque(true);
         infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        infoLabel.setFont(new Font("Permanent Marker", Font.PLAIN, 30));
+        infoLabel.setFont(customFont);
         add(infoLabel, BorderLayout.NORTH);
 
         for (int i = 0; i < 9; i++) {
             buttons[i] = new JButton("");
-            buttons[i].setFont(new Font("Permanent Marker", Font.PLAIN, 60));
+            buttons[i].setFont(customFont.deriveFont(60f));
             buttons[i].setBackground(Color.GRAY);
             buttons[i].setForeground(Color.WHITE);
             buttons[i].setFocusPainted(false);
@@ -40,7 +44,7 @@ public class TicTacToe extends JFrame {
         }
 
         JButton resetButton = new JButton("New Game");
-        resetButton.setFont(new Font("Permanent Marker", Font.PLAIN, 16));
+        resetButton.setFont(customFont.deriveFont(16f));
         resetButton.setBackground(Color.DARK_GRAY);
         resetButton.setForeground(Color.CYAN);
         resetButton.setBorder(BorderFactory.createLineBorder(Color.CYAN, 2));
@@ -110,6 +114,17 @@ public class TicTacToe extends JFrame {
         currentPlayer = 'O';
         infoLabel.setText("Circle goes first");
         gameEnded = false;
+    }
+
+    private Font loadFont(String fontFileName, float size) {
+        try {
+            InputStream is = getClass().getResourceAsStream("/" + fontFileName);
+            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
+            return font.deriveFont(size);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Font("SansSerif", Font.PLAIN, 30);
+        }
     }
 
     public static void main(String[] args) {
