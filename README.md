@@ -1,7 +1,7 @@
 # Tic Tac Toe
 
 [![GitHub Release](https://img.shields.io/github/v/release/PetarMc1/TicTacToe?logo=GitHub)](https://github.com/PetarMc1/TicTacToe/releases)
-![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/PetarMc1/TicTacToe/TicTacToe-1.0.0.jar?logo=GitHub)
+![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/PetarMc1/TicTacToe/TicTacToe-1.1.0.jar?logo=GitHub)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/PetarMc1/TicTacToe?logo=Github)](https://github.com/PetarMc1/TicTacToe/pulls)
 [![GitHub Issues](https://img.shields.io/github/issues/PetarMc1/TicTacToe?logo=Github)](https://github.com/PetarMc1/TicTacToe/issues)
 [![GitHub License](https://img.shields.io/github/license/PetarMc1/TicTacToe)](https://github.com/PetarMc1/TicTacToe/blob/master/LICENSE)
@@ -44,7 +44,7 @@ Alternatively, you can download the JAR file from the [latest release](https://g
 Once downloaded, you can run the JAR file directly by executing the following command:
 
 ```bash
-java -jar TicTacToe-1.0.0.jar
+java -jar TicTacToe-1.1.0.jar
 ```
 
 or by double-clicking the file.
